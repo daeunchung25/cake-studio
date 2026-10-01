@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cake Studio</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <div class="brand-title">Cake Studio ♡</div>
+    <div class="brand-subtitle">bake · decorate · celebrate</div>
+  </div>
+
+  <button id="celebrateBtn">
+    🕯 Celebrate
+  </button>
+</header>
+
+
+<main>
+
+  <!-- SIDEBAR -->
+
+  <aside class="panel">
+
+    <section>
+      <h2>1. Cake Base</h2>
+
+      <p class="label">FLAVOR</p>
+
+      <div class="option-grid">
+
+        <button class="flavor active" data-flavor="vanilla">
+          Vanilla
+        </button>
+
+        <button class="flavor" data-flavor="chocolate">
+          Chocolate
+        </button>
+
+        <button class="flavor" data-flavor="strawberry">
+          Strawberry
+        </button>
+
+        <button class="flavor" data-flavor="matcha">
+          Matcha
+        </button>
+
+        <button class="flavor" data-flavor="redvelvet">
+          Red Velvet
+        </button>
+
+      </div>
+    </section>
+
+
+    <section>
+      <h2>2. Inner Filling</h2>
+
+      <div class="option-grid">
+
+        <button
+          class="filling active"
+          data-color="#fff4e8">
+          Vanilla Cream
+        </button>
+
+        <button
+          class="filling"
+          data-color="#f8a6ba">
+          Strawberry
+        </button>
+
+        <button
+          class="filling"
+          data-color="#704236">
+          Chocolate
+        </button>
+
+        <button
+          class="filling"
+          data-color="#a8c58d">
+          Matcha
+        </button>
+
+        <button
+          class="filling"
+          data-color="#f4cf63">
+          Lemon
+        </button>
+
+      </div>
+    </section>
+
+
+    <section>
+
+      <h2>3. Piping</h2>
+
+      <p class="label">PIPING TIP</p>
+
+      <div class="piping-tools">
+
+        <button
+          class="tool active"
+          data-tool="round">
+          ●
+          <span>Round</span>
+        </button>
+
+        <button
+          class="tool"
+          data-tool="star">
+          ✦
+          <span>Star</span>
+        </button>
+
+        <button
+          class="tool"
+          data-tool="ruffle">
+          〰
+          <span>Ruffle</span>
+        </button>
+
+        <button
+          class="tool"
+          data-tool="rosette">
+          ❀
+          <span>Rose</span>
+        </button>
+
+      </div>
+
+
+      <p class="label">FROSTING COLOR</p>
+
+      <div class="colors">
+
+        <button
+          class="color active"
+          data-color="#fff1e7"
+          style="background:#fff1e7">
+        </button>
+
+        <button
+          class="color"
+          data-color="#ff8fa9"
+          style="background:#ff8fa9">
+        </button>
+
+        <button
+          class="color"
+          data-color="#ffc2cf"
+          style="background:#ffc2cf">
+        </button>
+
+        <button
+          class="color"
+          data-color="#ffd66b"
+          style="background:#ffd66b">
+        </button>
+
+        <button
+          class="color"
+          data-color="#a9dfb0"
+          style="background:#a9dfb0">
+        </button>
+
+        <button
+          class="color"
+          data-color="#9bd8f5"
+          style="background:#9bd8f5">
+        </button>
+
+        <button
+          class="color"
+          data-color="#c7a8ef"
+          style="background:#c7a8ef">
+        </button>
+
+        <button
+          class="color"
+          data-color="#7b4938"
+          style="background:#7b4938">
+        </button>
+
+      </div>
+
+
+      <p class="label">PIPING SIZE</p>
+
+      <input
+        id="sizeSlider"
+        type="range"
+        min="6"
+        max="30"
+        value="14">
+    </section>
+
+
+    <section>
+
+      <h2>4. Decorations</h2>
+
+      <div class="decorations">
+
+        <button
+          class="decoration"
+          data-decoration="strawberry">
+          🍓
+          <span>Strawberry</span>
+        </button>
+
+        <button
+          class="decoration"
+          data-decoration="cherry">
+          🍒
+          <span>Cherry</span>
+        </button>
+
+        <button
+          class="decoration"
+          data-decoration="blueberry">
+          🫐
+          <span>Blueberry</span>
+        </button>
+
+        <button
+          class="decoration"
+          data-decoration="flower">
+          🌼
+          <span>Flower</span>
+        </button>
+
+        <button
+          class="decoration"
+          data-decoration="heart">
+          ♥
+          <span>Heart</span>
+        </button>
+
+        <button
+          class="decoration"
+          data-decoration="pearl">
+          ●
+          <span>Pearl</span>
+        </button>
+
+        <button
+          class="decoration"
+          data-decoration="sprinkles">
+          ✦
+          <span>Sprinkles</span>
+        </button>
+
+        <button
+          class="decoration"
+          data-decoration="candle">
+          🕯
+          <span>Candle</span>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <div class="bottomButtons">
+
+      <button id="undo">
+        ↶ Undo
+      </button>
+
+      <button id="clear">
+        Clear
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- WORKSPACE -->
+
+  <section class="studio">
+
+    <div class="view-switch">
+
+      <button
+        id="wholeCakeButton"
+        class="active">
+        Whole Cake
+      </button>
+
+      <button id="insideButton">
+        Show Inside
+      </button>
+
+    </div>
+
+
+    <!-- WHOLE CAKE -->
+
+    <div
+      id="wholeCakeView"
+      class="whole-cake-view">
+
+      <div
+        id="cakeScene"
+        class="cake-scene">
+
+        <div class="cake-shadow"></div>
+
+        <div class="cake-stand-top"></div>
+
+        <div class="cake-stand-base"></div>
+
+
+        <div id="cakeBody" class="cake-body">
+
+          <div class="cake-side"></div>
+
+          <div class="cake-top"></div>
+
+          <div class="top-highlight"></div>
+
+          <canvas
+            id="decorCanvas"
+            width="1000"
+            height="700">
+          </canvas>
+
+          <div id="candleLayer"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- INSIDE -->
+
+    <div
+      id="insideView"
+      class="inside-view hidden-view">
+
+      <div class="slice-card">
+
+        <div class="slice-title">
+          Inside the Cake
+        </div>
+
+        <div class="cake-slice">
+
+          <div class="slice-frosting-top"></div>
+
+          <div class="slice-sponge sponge-one"></div>
+
+          <div class="slice-filling filling-one"></div>
+
+          <div class="slice-sponge sponge-two"></div>
+
+          <div class="slice-filling filling-two"></div>
+
+          <div class="slice-sponge sponge-three"></div>
+
+          <div class="slice-frosting-bottom"></div>
+
+          <div class="slice-side-frosting"></div>
+
+        </div>
+
+
+        <div class="slice-description">
+
+          <div>
+            <strong>Layer 1</strong>
+            <span id="layerFlavor1">
+              Vanilla sponge
+            </span>
+          </div>
+
+          <div>
+            <strong>Filling 1</strong>
+            <span id="layerFilling1">
+              Vanilla cream
+            </span>
+          </div>
+
+          <div>
+            <strong>Layer 2</strong>
+            <span id="layerFlavor2">
+              Vanilla sponge
+            </span>
+          </div>
+
+          <div>
+            <strong>Filling 2</strong>
+            <span id="layerFilling2">
+              Vanilla cream
+            </span>
+          </div>
+
+          <div>
+            <strong>Layer 3</strong>
+            <span id="layerFlavor3">
+              Vanilla sponge
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+
+<!-- CELEBRATION -->
+
+<div
+  id="celebration"
+  class="celebration hidden-celebration">
+
+  <button
+    id="closeCelebrate"
+    class="closeCelebrate">
+    ×
+  </button>
+
+
+  <div class="celebration-content">
+
+    <p class="celebration-small">
+      YOUR CAKE IS READY
+    </p>
+
+    <h1>
+      Make a wish!
+    </h1>
+
+
+    <div
+      id="celebrationCake"
+      class="celebration-cake">
+
+      <img
+        id="cakeSnapshot"
+        alt="Your decorated cake">
+
+      <div
+        id="celebrationCandles"
+        class="celebration-candles">
+      </div>
+
+    </div>
+
+
+    <button id="microphoneButton">
+      🎤 Start microphone
+    </button>
+
+    <p id="blowText">
+      Blow into your microphone to blow out the candles.
+    </p>
+
+    <div class="blow-meter">
+      <div id="blowLevel"></div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
